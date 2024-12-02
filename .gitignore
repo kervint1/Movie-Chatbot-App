@@ -1,0 +1,25 @@
+# Pythonのキャッシュファイル
+*.pyc
+*.pyo
+__pycache__/
+
+# 環境ファイル
+.env
+
+# SQLiteデータベース
+db.sqlite3
+
+# Djangoマイグレーションファイル
+*.log
+*.pot
+*.py[cod]
+*.~ 
+*.swp
+*.swo
+*.bak
+
+# VSCode設定
+.vscode/
+
+# Docker関連ファイル
+*.pid
