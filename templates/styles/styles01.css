@@ -1,0 +1,85 @@
+/* 全体の設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダー */
+.header {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* コンテンツ部分 */
+.content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* サイドパネル */
+.side-panel {
+    width: 100px;
+    height: 200px;
+    background-color: gray;
+}
+
+.side-panel.left {
+    margin-right: 20px;
+}
+
+.side-panel.right {
+    margin-left: 20px;
+}
+
+/* メインパネル */
+.main-panel {
+    width: 200px;
+    height: 300px;
+    background-color: lightgray;
+}
+
+/* 矢印 */
+.arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.arrow.left-arrow {
+    border-width: 20px 30px 20px 0;
+    border-color: transparent white transparent transparent;
+    margin-right: 20px;
+}
+
+.arrow.right-arrow {
+    border-width: 20px 0 20px 30px;
+    border-color: transparent transparent transparent white;
+    margin-left: 20px;
+}
+
+/* フッター */
+.footer {
+    height: 50px;
+    background-color: black;
+}
