@@ -41,6 +41,7 @@ body {
     width: 100px;
     height: 200px;
     background-color: gray;
+    border-radius: 10px; /* 角を丸くする */
 }
 
 .side-panel.left {
@@ -56,6 +57,7 @@ body {
     width: 200px;
     height: 300px;
     background-color: lightgray;
+    border-radius: 10px; /* 角を丸くする */
 }
 
 /* 矢印 */
@@ -82,4 +84,28 @@ body {
 .footer {
     height: 50px;
     background-color: black;
+}
+
+/* --- 以下、【ファイル①】の内容を追加 --- */
+
+/* ポスター画像のスタイル */
+.side-panel img, 
+.main-panel img {
+    width: 100%; /* パネル幅いっぱいに表示 */
+    height: auto; /* アスペクト比を維持 */
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; /* 見栄えを良くするため角を丸く */
+}
+
+/* パネル内のタイトルを見やすく調整 */
+.side-panel h3,
+.main-panel h2 {
+    text-align: center;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+.main-panel h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
