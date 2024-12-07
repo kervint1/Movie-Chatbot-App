@@ -77,14 +77,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 import pymysql
 pymysql.install_as_MySQLdb()
 import dj_database_url
-
-if os.getenv('DJANGO_PRODUCTION'):  # 環境変数 'DJANGO_PRODUCTION' が設定されている場合（デプロイ環境）
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=os.getenv('DATABASE_URL')
-        )
-    }
-else:  # 環境変数がない場合（ローカル開発環境）
+if os.getenv('DJANGO_NOTPRODUCTION'):  # 環境変数がない場合（ローカル開発環境）
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -98,6 +91,13 @@ else:  # 環境変数がない場合（ローカル開発環境）
             },
         }
     }
+else :  # 環境変数 'DJANGO_PRODUCTION' が設定されている場合（デプロイ環境）
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.getenv('DATABASE_URL')
+        )
+    }
+
 
 
 
