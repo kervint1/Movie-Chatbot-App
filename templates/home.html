@@ -2,6 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>ホーム</title>
+</head>
+<body>
+    <h1>映画リスト</h1>
+    <ul>
+        {% for movie in movies %}
+        <li>
+            <h2>{{ movie.title }}</h2>
+            <img src="{{ movie.image_path.url }}" alt="{{ movie.title }}" style="max-width: 200px;">
+            <p>{{ movie.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_movie' %}">映画を追加</a>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Application</title>
     {% load static %}
@@ -22,4 +44,4 @@
         <footer class="footer"></footer>
     </div>
 </body>
-</html>
+</html> -->
