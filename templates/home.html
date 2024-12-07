@@ -1,32 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ホーム</title>
-</head>
-<body>
-    <h1>映画リスト</h1>
-    <ul>
-        {% for movie in movies %}
-        <li>
-            <h2>{{ movie.title }}</h2>
-            <img src="{{ movie.image_path.url }}" alt="{{ movie.title }}" style="max-width: 200px;">
-            <p>{{ movie.description }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'add_movie' %}">映画を追加</a>
-</body>
-</html>
-
-
-<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Application</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
@@ -35,13 +13,14 @@
             Movie application
         </header>
         <div class="content">
-            <div class="side-panel left"></div>
-            <div class="arrow left-arrow"></div>
-            <div class="main-panel"></div>
-            <div class="arrow right-arrow"></div>
-            <div class="side-panel right"></div>
+            <div class="side-panel left" id="left-panel"></div>
+            <div class="arrow left-arrow" id="left-arrow"></div>
+            <div class="main-panel" id="main-panel"></div>
+            <div class="arrow right-arrow" id="right-arrow"></div>
+            <div class="side-panel right" id="right-panel"></div>
         </div>
         <footer class="footer"></footer>
     </div>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
-</html> -->
+</html>
