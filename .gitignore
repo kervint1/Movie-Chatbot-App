@@ -18,7 +18,6 @@ db.sqlite3
 *.swo
 *.bak
 
-./movie_management/migrations
 # VSCode設定
 .vscode/
 
