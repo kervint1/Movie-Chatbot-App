@@ -91,3 +91,42 @@ docker-compose down
 - Docker と Docker Compose がインストールされていること。
 - Python 3.9 をベースとした環境で動作することを確認済み。
 ```
+
+## ディレクトリ構成
+
+```
+movie_management/
+├── config/
+│   ├── __pycache__/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+├── movie_management/
+│   ├── __pycache__/
+│   ├── migrations/
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   ├── 0001_initial.py
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── styles.css
+│   ├── templates/
+│   │   ├── add_movie.html
+│   │   ├── chatbot.html
+│   │   ├── home.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+├── db.sqlite3
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+├── manage.py
+├── README.md
+├── requirements.txt
+```
