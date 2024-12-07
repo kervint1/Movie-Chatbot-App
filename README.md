@@ -110,6 +110,7 @@ movie_management/
 │   │   ├── __init__.py
 │   │   ├── 0001_initial.py
 │   ├── static/
+│   │   ├── js/
 │   │   ├── css/
 │   │   │   ├── styles.css
 │   ├── templates/
