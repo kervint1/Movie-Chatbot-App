@@ -73,23 +73,31 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/4.2/raef/settings/#databases
 import pymysql
 pymysql.install_as_MySQLdb()
+import dj_database_url
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'moviedb',
-        'USER': 'user',
-        'PASSWORD': 'password',
-        'HOST': 'db',  # Docker Compose のサービス名
-        'PORT': '3306',
-        'OPTIONS': {
-            'connect_timeout': 20,  # 接続タイムアウト (秒)
-        },
+if os.getenv('DJANGO_PRODUCTION'):  # 環境変数 'DJANGO_PRODUCTION' が設定されている場合（デプロイ環境）
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.getenv('DATABASE_URL')
+        )
     }
-}
+else:  # 環境変数がない場合（ローカル開発環境）
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'moviedb',
+            'USER': 'user',
+            'PASSWORD': 'password',
+            'HOST': 'db',
+            'PORT': '3306',
+            'OPTIONS': {
+                'connect_timeout': 20,
+            },
+        }
+    }
 
 
 
