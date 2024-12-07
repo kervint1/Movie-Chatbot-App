@@ -5,44 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ movie.title }}</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .movie-poster {
-            max-width: 300px;
-            height: auto;
-            border: 5px solid #333;
-            border-radius: 10px;
-        }
-
-        .movie-details {
-            margin-top: 20px;
-            text-align: left;
-            display: inline-block;
-        }
-
-        .back-link {
+        /* 既存のスタイルに追加 */
+        .like-btn {
             margin-top: 20px;
             display: inline-block;
             text-decoration: none;
             color: #fff;
-            background-color: #555;
+            background-color: red;
             padding: 10px 20px;
             border-radius: 5px;
+            cursor: pointer;
         }
 
-        .back-link:hover {
-            background-color: #777;
+        .like-btn:hover {
+            background-color: darkred;
+        }
+
+        .like-count {
+            margin-top: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -55,6 +36,36 @@
             <p><strong>Overview:</strong> {{ movie.overview }}</p>
         </div>
         <a class="back-link" href="/">Back to Home</a>
+        <div>
+            <button id="like-btn" class="like-btn">いいね👍</button>
+            <p id="like-count" class="like-count">いいね数: <span id="like-number">{{ movie.likes }}</span></p>
+        </div>
     </div>
+
+    <script>
+        const likeBtn = document.getElementById('like-btn');
+        const likeNumber = document.getElementById('like-number');
+        const csrfToken = '{{ csrf_token }}';
+        console.log('({{ movie.likes }})')
+
+        likeBtn.addEventListener('click', () => {
+            fetch(`/movie/{{ movie.id }}/like/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken,  // 必要であれば CSRF トークンを送信
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    likeNumber.textContent = data.likes;
+                } else {
+                    alert('いいねの処理に失敗しました。');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>

@@ -21,4 +21,5 @@ urlpatterns = [
     path('add_movie/', views.add_movie, name='add_movie'),  # 映画登録ページ
     path('', views.home, name='home'),  # ホームページ
     path('movie/<int:movie_id>/', views.movie_details, name='movie_details'),
+    path('movie/<int:movie_id>/like/', views.like_movie, name='like_movie'),
 ]
