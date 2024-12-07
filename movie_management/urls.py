@@ -20,4 +20,5 @@ from . import views
 urlpatterns = [
     path('add_movie/', views.add_movie, name='add_movie'),  # 映画登録ページ
     path('', views.home, name='home'),  # ホームページ
+    path('movie/<int:movie_id>/', views.movie_details, name='movie_details'),
 ]

@@ -1,30 +1,46 @@
-const API_KEY = '94fe3d343b5b95aebe1bb2af7aae2984'; // TMDB‚ÌAPIƒL[‚ğİ’è‚µ‚Ä‚­‚¾‚³‚¢
+const API_KEY = '94fe3d343b5b95aebe1bb2af7aae2984'; // TMDBã®APIã‚­ãƒ¼ã‚’è¨­å®šã—ã¦ãã ã•ã„
 const BASE_URL = 'https://api.themoviedb.org/3/movie/popular';
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; // •500px‚Ì‰æ‘œ‚ğæ“¾
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; // å¹…500pxã®ç”»åƒã‚’å–å¾—
 
-let movies = []; // ‰f‰æî•ñ‚ğŠi”[
-let currentIndex = 0; // Œ»İ‚ÌƒCƒ“ƒfƒbƒNƒX
+let movies = []; // æ˜ ç”»æƒ…å ±ã‚’æ ¼ç´
+let currentIndex = 0; // ç¾åœ¨ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 
-// ƒpƒlƒ‹—v‘f‚ğæ“¾
+
+
+// ãƒ‘ãƒãƒ«è¦ç´ ã‚’å–å¾—
 const leftPanel = document.getElementById('left-panel');
 const mainPanel = document.getElementById('main-panel');
 const rightPanel = document.getElementById('right-panel');
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 
-// API‚©‚çƒf[ƒ^‚ğæ“¾
+// APIã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
+// APIã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
 async function fetchMovies() {
     try {
         const response = await fetch(`${BASE_URL}?api_key=${API_KEY}`);
         const data = await response.json();
-        movies = data.results; // ‰f‰æî•ñ‚ğŠi”[
+        movies = data.results; // æ˜ ç”»æƒ…å ±ã‚’æ ¼ç´
         updatePanels();
+
+        // ãƒ¡ã‚¤ãƒ³ãƒ‘ãƒãƒ«ã®ã‚¯ãƒªãƒƒã‚¯ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¿½åŠ 
+        addMainPanelClickEvent();
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
 
-// ƒpƒlƒ‹‚Ì“à—e‚ğXV
+// ãƒ¡ã‚¤ãƒ³ãƒ‘ãƒãƒ«ã‚¯ãƒªãƒƒã‚¯ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¿½åŠ 
+function addMainPanelClickEvent() {
+    mainPanel.addEventListener('click', () => {
+        const mainMovie = movies[currentIndex];
+        // æ˜ ç”»ã®è©³ç´°ãƒšãƒ¼ã‚¸ã«ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆ
+        window.location.href = `/movie/${mainMovie.id}/`;
+    });
+}
+
+
+// ãƒ‘ãƒãƒ«ã®å†…å®¹ã‚’æ›´æ–°
 function updatePanels() {
     const leftMovie = movies[(currentIndex - 1 + movies.length) % movies.length];
     const mainMovie = movies[currentIndex];
@@ -44,17 +60,17 @@ function updatePanels() {
     `;
 }
 
-// ¶–îˆóƒNƒŠƒbƒNƒCƒxƒ“ƒg
+// å·¦çŸ¢å°ã‚¯ãƒªãƒƒã‚¯ã‚¤ãƒ™ãƒ³ãƒˆ
 leftArrow.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + movies.length) % movies.length;
     updatePanels();
 });
 
-// ‰E–îˆóƒNƒŠƒbƒNƒCƒxƒ“ƒg
+// å³çŸ¢å°ã‚¯ãƒªãƒƒã‚¯ã‚¤ãƒ™ãƒ³ãƒˆ
 rightArrow.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % movies.length;
     updatePanels();
 });
 
-// ‰Šú‰»
+// åˆæœŸåŒ–
 fetchMovies();
