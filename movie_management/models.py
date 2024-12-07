@@ -8,3 +8,11 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.title
+
+class Like(models.Model):
+    movie_id = models.IntegerField(unique=True)
+    count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return("Movie ID: {self.movie_id}, Likes: {self.count}")
+    
