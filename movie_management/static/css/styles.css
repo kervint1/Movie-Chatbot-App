@@ -1,4 +1,4 @@
-/* ‘S‘Ì‚Ìİ’è */
+/* å…¨ä½“ã®è¨­å®š */
 body {
     margin: 0;
     padding: 0;
@@ -19,8 +19,8 @@ body {
     margin-top: 150px;
 }
 
-/* ƒwƒbƒ_[ */
-/* ƒwƒbƒ_[‚ğí‚É‰æ–Êã•”‚ÉŒÅ’è */
+/* ãƒ˜ãƒƒãƒ€ãƒ¼ */
+/* ãƒ˜ãƒƒãƒ€ãƒ¼ã‚’å¸¸ã«ç”»é¢ä¸Šéƒ¨ã«å›ºå®š */
 .header {
     position: fixed;
     top: 0;
@@ -34,7 +34,7 @@ body {
     z-index: 1000;
 }
 
-/* ƒRƒ“ƒeƒ“ƒc•”•ª */
+/* ã‚³ãƒ³ãƒ†ãƒ³ãƒ„éƒ¨åˆ† */
 .content {
     flex: 1;
     display: flex;
@@ -43,12 +43,12 @@ body {
     position: relative;
 }
 
-/* ƒTƒCƒhƒpƒlƒ‹ */
+/* ã‚µã‚¤ãƒ‰ãƒ‘ãƒãƒ« */
 .side-panel {
     width: 100px;
     height: 200px;
     background-color: gray;
-    border-radius: 10px; /* Šp‚ğŠÛ‚­‚·‚é */
+    border-radius: 10px; /* è§’ã‚’ä¸¸ãã™ã‚‹ */
 }
 
 .side-panel.left {
@@ -59,15 +59,15 @@ body {
     margin-left: 20px;
 }
 
-/* ƒƒCƒ“ƒpƒlƒ‹ */
+/* ãƒ¡ã‚¤ãƒ³ãƒ‘ãƒãƒ« */
 .main-panel {
     width: 200px;
     height: 300px;
     background-color: lightgray;
-    border-radius: 10px; /* Šp‚ğŠÛ‚­‚·‚é */
+    border-radius: 10px; /* è§’ã‚’ä¸¸ãã™ã‚‹ */
 }
 
-/* –îˆó */
+/* çŸ¢å° */
 .arrow {
     width: 0;
     height: 0;
@@ -87,25 +87,25 @@ body {
     margin-left: 20px;
 }
 
-/* ƒtƒbƒ^[ */
+/* ãƒ•ãƒƒã‚¿ãƒ¼ */
 .footer {
     height: 50px;
     background-color: black;
 }
 
-/* --- ˆÈ‰ºAyƒtƒ@ƒCƒ‹‡@z‚Ì“à—e‚ğ’Ç‰Á --- */
+/* --- ä»¥ä¸‹ã€ã€ãƒ•ã‚¡ã‚¤ãƒ«â‘ ã€‘ã®å†…å®¹ã‚’è¿½åŠ  --- */
 
-/* ƒ|ƒXƒ^[‰æ‘œ‚ÌƒXƒ^ƒCƒ‹ */
+/* ãƒã‚¹ã‚¿ãƒ¼ç”»åƒã®ã‚¹ã‚¿ã‚¤ãƒ« */
 .side-panel img, 
 .main-panel img {
-    width: 100%; /* ƒpƒlƒ‹•‚¢‚Á‚Ï‚¢‚É•\¦ */
-    height: auto; /* ƒAƒXƒyƒNƒg”ä‚ğˆÛ */
+    width: 100%; /* ãƒ‘ãƒãƒ«å¹…ã„ã£ã±ã„ã«è¡¨ç¤º */
+    height: auto; /* ã‚¢ã‚¹ãƒšã‚¯ãƒˆæ¯”ã‚’ç¶­æŒ */
     display: block;
     margin: 0 auto;
-    border-radius: 5px; /* Œ©‰h‚¦‚ğ—Ç‚­‚·‚é‚½‚ßŠp‚ğŠÛ‚­ */
+    border-radius: 5px; /* è¦‹æ „ãˆã‚’è‰¯ãã™ã‚‹ãŸã‚è§’ã‚’ä¸¸ã */
 }
 
-/* ƒpƒlƒ‹“à‚Ìƒ^ƒCƒgƒ‹‚ğŒ©‚â‚·‚­’²® */
+/* ãƒ‘ãƒãƒ«å†…ã®ã‚¿ã‚¤ãƒˆãƒ«ã‚’è¦‹ã‚„ã™ãèª¿æ•´ */
 .side-panel h3,
 .main-panel h2 {
     text-align: center;
@@ -117,7 +117,7 @@ body {
     font-weight: bold;
 }
 
-/* MovieRecomenderƒŠƒ“ƒNi’†‰›‚É”z’uA‰ºü–³‚µA”’•¶šj */
+/* MovieRecomenderãƒªãƒ³ã‚¯ï¼ˆä¸­å¤®ã«é…ç½®ã€ä¸‹ç·šç„¡ã—ã€ç™½æ–‡å­—ï¼‰ */
 .back-home {
     text-align: center;
     color: white;
@@ -127,9 +127,16 @@ body {
     text-align: center;
 }
 
-/* LikedMoviesƒŠƒ“ƒNi‰E’[‚É”z’uA‰ºü–³‚µAƒsƒ“ƒN•¶šj */
+/* LikedMoviesãƒªãƒ³ã‚¯ï¼ˆå³ç«¯ã«é…ç½®ã€ä¸‹ç·šç„¡ã—ã€ãƒ”ãƒ³ã‚¯æ–‡å­—ï¼‰ */
 .goto-like {
     color: pink;
     text-decoration: none;
     font-size: 18px;
+}
+
+.goto-chatbot {
+    color: yellowgreen;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: auto; /* ã“ã‚Œã«ã‚ˆã‚Šä»–ã®ãƒªãƒ³ã‚¯ã‚ˆã‚Šå·¦å¯„ã›ã«ãªã‚Šã¾ã™ */
 }

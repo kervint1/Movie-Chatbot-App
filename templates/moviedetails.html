@@ -27,14 +27,6 @@
         }
 
         .header {
-            background-color: black;
-            text-align: center;
-            padding: 20px;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        .header {
             position: fixed;
             top: 0;
             left: 0;
@@ -46,9 +38,8 @@
             padding: 10px 20px;
             z-index: 1000;
         }
-
                 /* MovieRecomenderリンク（中央に配置、下線無し、白文字） */
-        .back-home {
+                .back-home {
             text-align: center;
             color: white;
             text-decoration: none;
@@ -63,9 +54,9 @@
             text-decoration: none;
             font-size: 18px;
         }
-
-
-        
+        .container{
+            margin-top: 70px;
+        }
     </style>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -75,11 +66,10 @@
         <a class="back-home" href="/">MovieRecomender</a>
         <a class="goto-like" href="/liked_movies">LikedMovies</a>
     </header>
-
     <div class="container">
-
+        <header class="mb-auto">
         <h1 class="col-12 text-center">{{ movie.title }}</h1>
-        </div>
+        </header>
         <main class="px-3 h-60 row">
             <div class="col-6 h-100">
             <img class="movie-poster mb-auto" src="{{ movie.poster_path }}" alt="{{ movie.title }}" width="60%">
