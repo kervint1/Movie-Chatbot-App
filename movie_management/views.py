@@ -59,3 +59,8 @@ def like_movie(request, movie_id):
         like.save()
         return JsonResponse({"success": True, "likes": like.count})
     return JsonResponse({"success": False, "message": "Invalid request method."})
+
+def liked_movies(request):
+    # データベースからいいねされた映画を取得
+    liked_movies = Like.objects.all().order_by('-count')  # いいねの多い順に並べる
+    return render(request, 'liked_movies.html', {'liked_movies': liked_movies})
