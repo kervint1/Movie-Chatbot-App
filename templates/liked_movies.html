@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liked Movies</title>
     <style>
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -60,11 +74,31 @@
             font-size: 16px;
             color: #aaa;
         }
+
+                /* MovieRecomenderリンク（中央に配置、下線無し、白文字） */
+        .back-home {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* LikedMoviesリンク（右端に配置、下線無し、ピンク文字） */
+        .goto-like {
+            color: pink;
+            text-decoration: none;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Liked Movies</h1>
+        <header class="header">
+            <a class="back-home" href="/">MovieRecomender</a>
+            <a class="goto-like" href="/liked_movies">LikedMovies</a>
+        </header>        <h1>Liked Movies</h1>
         {% if liked_movies %}
             {% for movie in liked_movies %}
                 <div class="movie-item" data-id="{{ movie.movie_id }}">

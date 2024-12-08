@@ -27,11 +27,7 @@ async function fetchMoviesByGenre(genreId) {
 
 
 function addMainPanelClickEvent() {
-    // 既存のイベントリスナーを解除
-    mainPanel.replaceWith(mainPanel.cloneNode(true));
-    const newMainPanel = document.getElementById('main-panel');
-
-    newMainPanel.addEventListener('click', () => {
+    mainPanel.addEventListener('click', () => {
         if (!movies || movies.length === 0) return;
         const mainMovie = movies[currentIndex];
         if (mainMovie && mainMovie.id) {
@@ -39,7 +35,6 @@ function addMainPanelClickEvent() {
         }
     });
 }
-
 
 function updatePanels() {
     if (movies.length === 0) {

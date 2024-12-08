@@ -25,15 +25,61 @@
         .like-count {
             font-size: 16px;
         }
+
+        .header {
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+                /* MovieRecomenderリンク（中央に配置、下線無し、白文字） */
+        .back-home {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* LikedMoviesリンク（右端に配置、下線無し、ピンク文字） */
+        .goto-like {
+            color: pink;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+
+        
     </style>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
 <body class="d-flex h-100 text-center text-bg-dark">
-    <div class="">
-        <header class="mb-auto">
+    <header class="header">
+        <a class="back-home" href="/">MovieRecomender</a>
+        <a class="goto-like" href="/liked_movies">LikedMovies</a>
+    </header>
+
+    <div class="container">
+
         <h1 class="col-12 text-center">{{ movie.title }}</h1>
-        </header>
+        </div>
         <main class="px-3 h-60 row">
             <div class="col-6 h-100">
             <img class="movie-poster mb-auto" src="{{ movie.poster_path }}" alt="{{ movie.title }}" width="60%">
