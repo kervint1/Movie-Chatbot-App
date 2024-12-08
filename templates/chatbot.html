@@ -65,6 +65,24 @@
             text-align: left;
             color: #ADD8E6;
         }
+
+        footer {
+            position: absolute; /* 絶対位置に配置 */
+            bottom: 10px; /* 下から10px */
+            left: 50%; /* 横中央 */
+            transform: translateX(-50%); /* 中央揃え */
+        }
+
+        .back-link {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -74,6 +92,11 @@
         <input type="text" id="user-input" class="chat-input" placeholder="Type your message...">
         <button id="send-button" class="send-button">Send</button>
     </div>
+    <footer>
+        <div>
+            <a class="back-link" href="/">Back to Home</a>
+        </div>
+    </footer>
     <script src="{% static 'js/chatbot.js' %}"></script>
 </body>
 </html>
