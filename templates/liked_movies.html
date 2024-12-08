@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liked Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .movie-item {
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #222;
+            border: 1px solid #555;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .movie-poster {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .movie-details {
+            flex-grow: 1;
+        }
+
+        .movie-item a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .movie-item:hover {
+            background-color: #333;
+        }
+
+        .movie-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .like-count {
+            font-size: 16px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Liked Movies</h1>
+        {% if liked_movies %}
+            {% for movie in liked_movies %}
+                <div class="movie-item" data-id="{{ movie.movie_id }}">
+                    <img class="movie-poster" src="" alt="Movie Poster">
+                    <div class="movie-details">
+                        <h3 class="movie-title">{{ forloop.counter }}. Movie ID: {{ movie.movie_id }}</h3>
+                        <p class="like-count">Likes: {{ movie.count }}</p>
+                        <a href="/movie/{{ movie.movie_id }}/">View Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No movies have been liked yet.</p>
+        {% endif %}
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+    <script src="{% static 'js/liked_movies.js' %}"></script>
+</body>
+</html>
