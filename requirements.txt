@@ -3,3 +3,4 @@ pymysql
 pillow
 dj-database-url
 requests
+django-bootstrap5
