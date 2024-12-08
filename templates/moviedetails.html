@@ -1,3 +1,4 @@
+{% load django_bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,24 +23,33 @@
         }
 
         .like-count {
-            margin-top: 10px;
             font-size: 16px;
         }
     </style>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
-<body>
-    <div class="container">
-        <h1>{{ movie.title }}</h1>
-        <img class="movie-poster" src="{{ movie.poster_path }}" alt="{{ movie.title }}">
-        <div class="movie-details">
-            <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
-            <p><strong>Overview:</strong> {{ movie.overview }}</p>
-        </div>
-        <a class="back-link" href="/">Back to Home</a>
-        <div>
-            <button id="like-btn" class="like-btn">いいね👍</button>
-            <p id="like-count" class="like-count">いいね数: <span id="like-number">{{ movie.likes }}</span></p>
-        </div>
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="">
+        <header class="mb-auto">
+        <h1 class="col-12 text-center">{{ movie.title }}</h1>
+        </header>
+        <main class="px-3 h-60 row">
+            <div class="col-6 h-100">
+            <img class="movie-poster mb-auto" src="{{ movie.poster_path }}" alt="{{ movie.title }}" width="60%">
+            </div>
+            <div class="movie-details col-6 h-100  align-middle text-center">
+                <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+                <p><strong>Overview:</strong> {{ movie.overview }}</p>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <a class="back-link" href="/">Back to Home</a>
+                <button id="like-btn" class="like-btn">いいね👍</button>
+                <p id="like-count" class="like-count">いいね数: <span id="like-number">{{ movie.likes }}</span></p>
+            </div>
+        </footer>
     </div>
 
     <script>
