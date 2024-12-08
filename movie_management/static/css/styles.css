@@ -16,15 +16,22 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 150px;
 }
 
 /* ヘッダー */
+/* ヘッダーを常に画面上部に固定 */
 .header {
-    background-color: black;
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+    z-index: 1000;
 }
 
 /* コンテンツ部分 */
@@ -108,4 +115,21 @@ body {
 .main-panel h2 {
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+/* MovieRecomenderリンク（中央に配置、下線無し、白文字） */
+.back-home {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* LikedMoviesリンク（右端に配置、下線無し、ピンク文字） */
+.goto-like {
+    color: pink;
+    text-decoration: none;
+    font-size: 18px;
 }
