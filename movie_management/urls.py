@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.home, name='home'),  # ホームページ
     path('movie/<int:movie_id>/', views.movie_details, name='movie_details'),
     path('movie/<int:movie_id>/like/', views.like_movie, name='like_movie'),
+    path('liked_movies/', views.liked_movies, name='liked_movies'),
 ]
