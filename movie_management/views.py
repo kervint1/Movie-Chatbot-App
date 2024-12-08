@@ -64,3 +64,6 @@ def liked_movies(request):
     # データベースからいいねされた映画を取得
     liked_movies = Like.objects.all().order_by('-count')  # いいねの多い順に並べる
     return render(request, 'liked_movies.html', {'liked_movies': liked_movies})
+
+def chatbot(request):
+    return render(request, 'chatbot.html')
